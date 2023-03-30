@@ -1,6 +1,6 @@
 version: 1
 applications:
-  - appRoot: nextjs-amplified-app/
+  - appRoot: front-end/
     frontend:
       phases:
         preBuild:
@@ -10,7 +10,6 @@ applications:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: .next
         files:
           - '**/*'
       cache:
