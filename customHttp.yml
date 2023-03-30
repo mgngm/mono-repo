@@ -1,6 +1,6 @@
 applications:
   - appRoot: nextjs-amplified-app/
-  customHeaders:
+    customHeaders:
     - pattern: '**'
       headers:
         - key: X-Frame-Options
