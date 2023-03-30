@@ -1,5 +1,5 @@
 applications:
-  - appRoot: front-end/
+  - appRoot: nextjs-amplified-app/
     customHeaders:
     - pattern: '**'
       headers:
