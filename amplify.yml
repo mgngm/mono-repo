@@ -1,0 +1,29 @@
+version: 1
+applications:
+  - appRoot: nextjs-amplified-app/
+    customHeaders:
+      - pattern: '**'
+        headers:
+          - key: X-Frame-Options
+            value: SAMEORIGIN
+          - key: X-XSS-Protection
+            value: 1; mode=block
+          - key: Strict-Transport-Security
+            value: max-age=31536000; includeSubdomains
+          - key: Content-Type-Options
+            value: nosniff
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
