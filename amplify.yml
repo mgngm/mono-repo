@@ -16,7 +16,7 @@ applications:
       cache:
         paths:
           - node_modules/**/*
-    - appRoot: mono-repo/react-amplify-app/
+  - appRoot: mono-repo/react-amplify-app/
     frontend:
       phases:
         preBuild:
