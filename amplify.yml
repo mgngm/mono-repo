@@ -1,6 +1,6 @@
 version: 1
 applications:
-  - appRoot: nextjs-amplified-app/
+  - appRoot: mono-repo/nextjs-amplified-app/
     frontend:
       phases:
         preBuild:
@@ -10,7 +10,23 @@ applications:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: build
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+    - appRoot: mono-repo/react-amplify-app/
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: .next
         files:
           - '**/*'
       cache:
