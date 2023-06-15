@@ -9,6 +9,9 @@ applications:
         build:
           commands:
             - npm run build
+            - mkdir app
+            - mv .next/* app/
+            - mv app .next/
       artifacts:
         baseDirectory: .next
         files:
