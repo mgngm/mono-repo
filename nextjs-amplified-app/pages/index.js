@@ -19,7 +19,7 @@ export default function Home({ posts }) {
         </h1>
 
         <p className={styles.description}>
-          Powered by AWS Amplify
+          Powered by AWS Amplify...
         </p>
 
         <Link href="/about">Home</Link>
